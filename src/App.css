@@ -65,7 +65,7 @@ h1 {
   text-align: center;
   align-items: center;
   align-content: center;
-  background: url('./16603.jpg') no-repeat center center fixed;
+  background: url('./bg.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -160,7 +160,7 @@ h1 {
 }
 
 .loader {
-  margin: 1.5rem;
+  margin-bottom: 1.3rem;
   width: 100vw;
 }
 

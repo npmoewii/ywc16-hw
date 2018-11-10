@@ -130,7 +130,12 @@ class App extends Component {
           <div className="main">
             <div className="title">
               <h1>THAILAND's SCHOOL INFORMATION</h1>
-              <h5>Retrieve from: https://api.data.go.th</h5>
+              <h5>
+                <em>
+                  <b>Retrieve from: </b>
+                  <a href="https://api.data.go.th">https://api.data.go.th</a>
+                </em>
+              </h5>
             </div>
             <div className="search">
               <Input.Group size="large" compact>
