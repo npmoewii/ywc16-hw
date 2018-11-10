@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import InfiniteScoll from 'react-infinite-scroller';
 import { Card, Input, Button, Spin, Select } from 'antd';
+import Parallax from 'parallax-js';
 import './App.css';
 import getSchool, { findSchoolWithOption } from './api';
 
@@ -39,6 +40,15 @@ class App extends Component {
 
   componentDidMount() {
     this.inputRef.focus();
+    this.parallax = new Parallax(this.bg, {
+      relativeInput: true
+    });
+    this.parallax.friction(0.2, 0.2);
+    this.parallax.enable();
+  }
+
+  componentWillUnmount() {
+    this.parallax.disable();
   }
 
   loader = <Spin size="large" className="loader" />;
@@ -126,8 +136,11 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="bg" />
-        <header className="App-header">
+        <div className="bg" ref={el => (this.bg = el)}>
+          <div className="color-bg" />
+          <div className="img-bg" data-depth="0.1" />
+        </div>
+        <header className="App-header" data-depth="0.0">
           <div className="main">
             <div className="title">
               <h1>THAILAND's SCHOOL INFORMATION</h1>
@@ -189,7 +202,7 @@ class App extends Component {
             </InfiniteScoll>
           ) : null}
         </header>
-        <footer className="App-footer">
+        <footer className="App-footer" data-depth="0.0">
           <a href="https://www.freepik.com/free-vector/school-building-with-small-fence-around_3297805.htm">
             Background by Katemangostar
           </a>
