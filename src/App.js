@@ -126,6 +126,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <div className="bg" />
         <header className="App-header">
           <div className="main">
             <div className="title">
